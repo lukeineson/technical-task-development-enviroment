@@ -6,7 +6,7 @@ services:
     ports:
       - 5000:5000
     volumes:
-      - ./dev/flask:/app
+      - .volumes/dev/flask:/app
     networks:
       - devnetwork
   laravel:
@@ -15,7 +15,7 @@ services:
     ports:
       - 8000:8000
     volumes:
-      - ./dev/laravel:var/www/html
+      - .volumes/dev/laravel:var/www/html
     networks:
       - devnetwork
   react:
@@ -24,7 +24,7 @@ services:
     ports:
       - 3000:80
     volumes:
-      - ./dev/react:/app
+      - .volumes/dev/react:/app
     networks:
       - devnetwork
 networks:

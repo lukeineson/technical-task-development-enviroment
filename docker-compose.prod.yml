@@ -6,7 +6,7 @@ services:
     ports:
       - 5002:5000
     volumes:
-      - ./prod/flask:/app
+      - .volumes/prod/flask:/app
     networks:
       - prodnetwork
   laravel:
@@ -15,7 +15,7 @@ services:
     ports:
       - 8002:8000
     volumes:
-      - ./prod/laravel:var/www/html
+      - .volumes/prod/laravel:var/www/html
     networks:
       - prodnetwork
   react:
@@ -24,7 +24,7 @@ services:
     ports:
       - 3002:80
     volumes:
-      - ./prod/react:/app
+      - .volumes/prod/react:/app
     networks:
       - prodnetwork
 networks:

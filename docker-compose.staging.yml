@@ -6,7 +6,7 @@ services:
     ports:
       - 5001:5000
     volumes:
-      - ./staging/flask:/app
+      - .volumes/staging/flask:/app
     networks:
       - stagingnetwork
   laravel:
@@ -15,7 +15,7 @@ services:
     ports:
       - 8001:8000
     volumes:
-      - ./staging/laravel:var/www/html
+      - .volumes/staging/laravel:var/www/html
     networks:
       - stagingnetwork
   react:
@@ -24,7 +24,7 @@ services:
     ports:
       - 3001:80
     volumes:
-      - ./staging/react:/app
+      - .volumes/staging/react:/app
     networks:
       - stagingnetwork
 networks:
