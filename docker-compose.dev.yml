@@ -1,0 +1,32 @@
+version: '3'
+services:
+  flask: 
+    build:
+      context: ./flask
+    ports:
+      - 5000:5000
+    volumes:
+      - ./dev/flask:/app
+    networks:
+      - devnetwork
+  laravel:
+    build:
+      context: ./laravel
+    ports:
+      - 8000:8000
+    volumes:
+      - ./dev/laravel:var/www/html
+    networks:
+      - devnetwork
+  react:
+    build:
+      context: ./react
+    ports:
+      - 3000:80
+    volumes:
+      - ./dev/laravel:/var/www/html
+    networks:
+      - devnetwork
+networks:
+  devnetwork:
+  
