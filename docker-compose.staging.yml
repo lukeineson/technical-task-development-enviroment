@@ -4,28 +4,28 @@ services:
     build:
       context: ./flask
     ports:
-      - 5000:5000
+      - 5001:5000
     volumes:
-      - ./dev/flask:/app
+      - ./staging/flask:/app
     networks:
-      - devnetwork
+      - stagingnetwork
   laravel:
     build:
       context: ./laravel
     ports:
-      - 8000:8000
+      - 8001:8000
     volumes:
-      - ./dev/laravel:var/www/html
+      - ./staging/laravel:var/www/html
     networks:
-      - devnetwork
+      - stagingnetwork
   react:
     build:
       context: ./react
     ports:
-      - 3000:80
+      - 3001:80
     volumes:
-      - ./dev/react:/app
+      - ./staging/react:/app
     networks:
-      - devnetwork
+      - stagingnetwork
 networks:
-  devnetwork:
+  stagingnetwork:
