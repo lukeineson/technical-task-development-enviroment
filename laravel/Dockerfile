@@ -32,7 +32,7 @@ WORKDIR /var/www/html
 COPY --from=builder /app .
 
 # Expose the Apache port
-EXPOSE 80
+EXPOSE 8000
 
 # Set the entrypoint command
 CMD ["apache2-foreground"]
